@@ -13,7 +13,7 @@
     const emailInput =document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const loginButton = document.getElementById("loginbutton");
-    const signupButton = document.getElementById("logout");
+    const signupButton = document.getElementById("signupbutton");
 
 
     loginButton.addEventListener('click', ()=>{
@@ -35,19 +35,11 @@
       const auth = firebase.auth();
 
       auth.createUserWithEmailAndPassword(email,password)
+        .then(() =>window.open("home.html","_self"))
         .catch(e => {
+          //TODO show error message
           console.log(e.message)
-          window.location.href("error.html");
         });
-    });
-
-    firebase.auth().onAuthStateChanged(firebaseUser =>{
-      if (firebaseUser){
-        console.log(firebaseUser);
-        window.open("home.html","_self");
-      }else {
-        console.log("not Logged in ");
-      }
     });
 
 }());

@@ -20,7 +20,34 @@
     loginButton.addEventListener('click', e=>{
         const email = emailInput.value;
         const password = passwordInput.value;
-        const auth = fire
+        const auth = firebase.auth();
+
+        auth.signInWithEmailAndPassword(email,password)
+          .catch(e => console.log(e.message));
+    });
+
+    signupButton.addEventListener('click', e=>{
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const auth = firebase.auth();
+
+      auth.createUserWithEmailAndPassword(email,password)
+        .catch(e => console.log(e.message));
+    });
+
+    logoutButton.addEventListener('click', e=>{
+      firebase.auth().signOut();
     })
+
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if (firebaseUser){
+        console.log(firebaseUser);
+        // logoutButton.classList.remove("hide");
+      }else {
+        console.log("not Logged in ");
+        // logoutButton.classList.add("hide");
+
+      }
+    });
 
 }());

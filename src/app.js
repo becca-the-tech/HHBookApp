@@ -13,14 +13,33 @@
     const emailInput =document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const loginButton = document.getElementById("loginbutton");
-    const logoutButton = document.getElementById("logout");
-    const signupButton = document.getElementById("logout");
+    const signupButton = document.getElementById("signupbutton");
 
 
-    loginButton.addEventListener('click', e=>{
+    loginButton.addEventListener('click', ()=>{
         const email = emailInput.value;
         const password = passwordInput.value;
-        const auth = fire
-    })
+        const auth = firebase.auth();
+
+        auth.signInWithEmailAndPassword(email,password)
+          .then(user => window.open("home.html","_self") )
+          .catch(e => {
+            //TODO show error message
+            console.log(e.message);
+          });
+    });
+
+    signupButton.addEventListener('click', ()=>{
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const auth = firebase.auth();
+
+      auth.createUserWithEmailAndPassword(email,password)
+        .then(() =>window.open("home.html","_self"))
+        .catch(e => {
+          //TODO show error message
+          console.log(e.message)
+        });
+    });
 
 }());

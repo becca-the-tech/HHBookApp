@@ -13,40 +13,40 @@
     const emailInput =document.getElementById("email");
     const passwordInput = document.getElementById("password");
     const loginButton = document.getElementById("loginbutton");
-    const logoutButton = document.getElementById("logout");
     const signupButton = document.getElementById("logout");
 
 
-    loginButton.addEventListener('click', e=>{
+    loginButton.addEventListener('click', ()=>{
         const email = emailInput.value;
         const password = passwordInput.value;
         const auth = firebase.auth();
 
         auth.signInWithEmailAndPassword(email,password)
-          .catch(e => console.log(e.message));
+          .then(user => window.open("home.html","_self") )
+          .catch(e => {
+            //TODO show error message
+            console.log(e.message);
+          });
     });
 
-    signupButton.addEventListener('click', e=>{
+    signupButton.addEventListener('click', ()=>{
       const email = emailInput.value;
       const password = passwordInput.value;
       const auth = firebase.auth();
 
       auth.createUserWithEmailAndPassword(email,password)
-        .catch(e => console.log(e.message));
+        .catch(e => {
+          console.log(e.message)
+          window.location.href("error.html");
+        });
     });
-
-    logoutButton.addEventListener('click', e=>{
-      firebase.auth().signOut();
-    })
 
     firebase.auth().onAuthStateChanged(firebaseUser =>{
       if (firebaseUser){
         console.log(firebaseUser);
-        // logoutButton.classList.remove("hide");
+        window.open("home.html","_self");
       }else {
         console.log("not Logged in ");
-        // logoutButton.classList.add("hide");
-
       }
     });
 

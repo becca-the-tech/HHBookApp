@@ -61,4 +61,10 @@ document.getElementById("saveButton").addEventListener('click', e=>{
     select.remove();
   });
   listname.innerText = "";
+});
+
+document.getElementById("logout").addEventListener('click',e=>{
+  const auth = firebase.auth();
+  auth.signOut();
+  window.open("Login.html","_self");
 })

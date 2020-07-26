@@ -1,218 +1,252 @@
 <!DOCTYPE HTML>
 <!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Read Only by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 
-<head>
-	<title>Person's Reading List</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
-  <style>
-		img {
-			height: 150px;
-			width: 150px;
-		}
+  <head>
+    <title>Person's Reading List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <style>
+      img {
+        /*height: 150px;*/
+        width: 150px;
+      }
 
-		.flex-container {
-			display: flex;
-			padding-left: 30px;
-			padding-right: 50px;
-			flex-wrap: wrap;
-			align-content: space-around;
-		}
+      .flex-container {
+        display: flex;
+        padding-left: 30px;
+        padding-right: 50px;
+        flex-wrap: wrap;
+        align-content: space-around;
+      }
 
-		.book {
-			padding: 20px 10px;
-		}
-	</style>
-</head>
+      .book {
+        padding: 20px 10px;
+      }
+    </style>
+  </head>
 
-<body class="is-preload">
+  <body class="is-preload">
 
-	<!-- Header -->
-	<section id="header">
-		<header>
-			<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
-			<h1 id="logo"><a href="#">User Name</a></h1>
-			<p></p>
-		</header>
-		<nav id="nav">
-			<ul>
-				<li><a href="#one" class="active">Add to Your Reading List</a></li>
-				<li><a href="#six">Your Reading List</a></li>
-				<li><a href="#two">Achievements</a></li>
-				<li><a href="#three">Recommended Books</a></li>
-        <li><a>Logout</a></li>
-			</ul>
-		</nav>
-		<footer>
-			<ul class="icons">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-		</footer>
-	</section>
+    <!-- Header -->
+    <section id="header">
+      <header>
+        <span class="image avatar"><img src="../images/floatingbook.jpeg" alt="" /></span>
+        <h1 id="logo"><a href="#">User Name</a></h1>
+        <p></p>
+      </header>
+      <nav id="nav">
+        <ul>
+          <li><a href="#one" class="active">Add to Your Reading List</a></li>
+          <li><a href="#six">Your Reading List</a></li>
+          <li><a href="#two">Achievements</a></li>
+          <li><a href="#three">Recommended Books</a></li>
+          <li><a href="#seven">Already Read</a></li>
+        </ul>
+      </nav>
+      <footer>
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+          <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+      </footer>
+    </section>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Main -->
-		<div id="main">
+      <!-- Main -->
+      <div id="main">
 
-			<!-- One -->
-			<section id="one">
-				<div class="image main" data-position="center">
-					<img src="../images/banner.jpg" alt="" />
-				</div>
-				<div class="container">
-					<header class="major">
-						<h2>Person's Reading List</h2>
-						<p>What will you read today?</p>
-					</header>
-					<h3>Create your reading list:</h3>
-					<form>
-            <div class = "formoptions">
-              <label>Reading List Name:<input id="listname" class="listname" type="text" name="name"> </label>
-              <button class="addbutton" id="addbutton">+</button>
-              <button id="saveButton">Save List</button>
+        <!-- One -->
+        <section id="one">
+          <div class="image main" data-position="center">
+            <img src="../images/bookbanner.jpg" alt="" />
+          </div>
+          <div class="container">
+            <header class="major">
+              <h2>Person's Reading List</h2>
+              <p>What will you read today?</p>
+            </header>
+            <h3>Add to your reading list:</h3>
+            <form>
+              <div class="formoptions">
+                <label>Reading List Name:<input id="listname" class="listname" type="text" name="name"> </label>
+                <button class="addbutton" id="addbutton">+</button>
+                <button id="saveButton">Save List</button>
+                <br>
+                <div id="bookdropdown"></div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="six">
+          <div class="container">
+            <header class="major">
+              <h3>Person's Reading List</h3>
+              <div class="flex-container features">
+
+                <article>
+                  <a href="#" class="image">
+                    <br>
+                    <img
+                      src="https://standardebooks.org/images/covers/leo-tolstoy_anna-karenina_constance-garnett-27162b6b-cover@2x.jpg" /></a>
+                  <div class="inner">
+                    <h4>Anna Karenina</h4>
+                    <br>Time: 21 hours 38 minutes
+                    <br>Reading ease of 70.84
+                    <br><input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
+                    <label for="book1Finished">Finished Reading?</label><br>
+                  </div>
+              </div>
+            </header>
+        </div>
+      </section>
+
+      <!-- Two -->
+      <section id="two">
+        <div class="container">
+          <h3>Achievements</h3>
+          <p></p>
+          <ul class="feature-icons">
+            <li class="icon solid fa-code">Read all the books</li>
+            <li class="icon solid fa-cubes">Small stack of books</li>
+            <li class="icon solid fa-book">Read books and stuff</li>
+            <li class="icon solid fa-coffee">Drink much coffee and read a book</li>
+            <li class="icon solid fa-bolt">Lightning fast reader</li>
+            <li class="icon solid fa-users">Reading in the shadows</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Three -->
+      <section id="three">
+        <div class="container">
+          <h3>Recommended Books</h3>
+          <p></p>
+          <div class="features">
+            <article>
+              <a href="#" class="image"><img
+                src="https://standardebooks.org/images/covers/charles-dickens_a-christmas-carol-8d64bc69-cover@2x.jpg"
+                alt="" /></a>
+              <div class="inner">
+                <h4>Celebrate Christmas in July</h4>
+                <p>Or even without celebrating, enjoy this classic Charles Dickens tale and the timeless
+                  characters of Scrooge, Marley, and the ghosts of Christmas Past, Present, and
+                  Future. And examine your own life along the way. </p>
+              </div>
+            </article>
+            <article>
+              <a href="#" class="image"><img
+                src="https://standardebooks.org/images/covers/frances-hodgson-burnett_the-secret-garden-3084900a-cover@2x.jpg"
+                alt="" /></a>
+              <div class="inner">
+                <h4>The Magic of a Garden</h4>
+                <p>Enjoy the reading magic of seeing grouchy young Mary (quite contrary) change as she
+                  works in a garden and makes friends along the way.
+                  These characters will seem like your friends over time spent with them and give you
+                  a youthful view on things.
+                </p>
+              </div>
+            </article>
+            <article>
+              <a href="#" class="image"><img
+                src="https://standardebooks.org/images/covers/victor-hugo_les-miserables_isabel-f-hapgood-ec8bfb8b-cover@2x.jpg"
+                alt="Les Mis" /></a>
+              <div class="inner">
+                <h4>Not Just a Musical</h4>
+                <p>While this book is known for its wonderful musical (which I recommend), this book is
+                  not to be overlooked. Great characters and development, stay with your favorite
+                  characters even longer in the form of a 1000+ page book (although, we do note, there
+                  are long battle scenes in the book which can be dry) but it's totally worth reading!
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <section id="seven">
+      <div class="container">
+        <header class="major">
+          <h3>Already Read</h3>
+          <div class="flex-container">
+            <a href="#" class="image">
+              <br>
+              <img
+                src="https://standardebooks.org/images/covers/leo-tolstoy_anna-karenina_constance-garnett-27162b6b-cover@2x.jpg" /></a>
+            <div class="inner">
+              <h4>Anna Karenina</h4>
+              <br>Time: 21 hours 38 minutes
+              <br>Reading ease of 70.84
+              <br><input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
+              <label for="book1Finished">Read it again?</label><br>
             </div>
-            <div id="bookdropdown">
+            <br>
 
+          </div>
+          <div class="inner">
+
+            <br>
+            <div id="addedReadBook">
             </div>
-					</form>
-				</div>
-			</section>
+          </div>
+        </header>
+      </div>
+    </section>
 
-			<section id="six">
-				<div class="container">
-					<header class="major">
-						<h3>Person's Reading List</h3>
-						<div class="flex-container booksContainer">
-							<div class="book"><strong>Anna Karenina</strong>
-								<br>Time: 21 hours 38 minutes
-								<br>Reading ease of 70.84
-								<br><img
-									src="https://standardebooks.org/images/covers/leo-tolstoy_anna-karenina_constance-garnett-27162b6b-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
 
-						</div>
-          </header>
-				</div>
-			</section>
+    <!-- Footer -->
+    <section id="footer">
+      <div class="container">
+        <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </section>
 
-			<!-- Two -->
-			<section id="two">
-				<div class="container">
-					<h3>Achievements</h3>
-					<p></p>
-					<ul class="feature-icons">
-						<li class="icon solid fa-code">Read all the books</li>
-						<li class="icon solid fa-cubes">Small stack of books</li>
-						<li class="icon solid fa-book">Read books and stuff</li>
-						<li class="icon solid fa-coffee">Drink much coffee and read a book</li>
-						<li class="icon solid fa-bolt">Lightning fast reader</li>
-						<li class="icon solid fa-users">Reading in the shadows</li>
-					</ul>
-				</div>
-			</section>
+    </div>
 
-			<!-- Three -->
-			<section id="three">
-				<div class="container">
-					<h3>Recommended Books</h3>
-					<p></p>
-					<div class="features">
-						<article>
-							<a href="#" class="image"><img
-									src="https://standardebooks.org/images/covers/charles-dickens_a-christmas-carol-8d64bc69-cover@2x.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>Celebrate Christmas in July</h4>
-								<p>Or even without celebrating, enjoy this classic Charles Dickens tale and the timeless
-									characters of Scrooge, Marley, and the ghosts of Christmas Past, Present, and
-									Future. And examine your own life along the way. </p>
-							</div>
-						</article>
-						<article>
-							<a href="#" class="image"><img
-									src="https://standardebooks.org/images/covers/frances-hodgson-burnett_the-secret-garden-3084900a-cover@2x.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>The Magic of a Garden</h4>
-								<p>Enjoy the reading magic of seeing grouchy young Mary (quite contrary) change as she
-									works in a garden and makes friends along the way.
-									These characters will seem like your friends over time spent with them and give you
-									a youthful view on things.
-								</p>
-							</div>
-						</article>
-						<article>
-							<a href="#" class="image"><img
-									src="https://standardebooks.org/images/covers/victor-hugo_les-miserables_isabel-f-hapgood-ec8bfb8b-cover@2x.jpg"
-									alt="Les Mis" /></a>
-							<div class="inner">
-								<h4>Not Just a Musical</h4>
-								<p>While this book is known for its wonderful musical (which I recommend), this book is
-									not to be overlooked. Great characters and development, stay with your favorite
-									characters even longer in the form of a 1000+ page book (although, we do note, there
-									are long battle scenes in the book which can be dry) but it's totally worth reading!
-								</p>
-							</div>
-						</article>
-					</div>
-				</div>
-			</section>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../js/getBooks.js"></script>
+    <script src="../js/listService.js"></script>
+    <script src="../js/home.js"></script>
 
-		</div>
+    <!-- Inline Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        const books = document.querySelectorAll("input[id^='book']");
 
-		<!-- Footer -->
-		<section id="footer">
-			<div class="container">
-				<ul class="copyright">
-					<li>&copy; Untitled. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</section>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrollex.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
-  <script src="../js/getBooks.js"></script>
-  <script src="../js/listService.js"></script>
-  <script src="../js/home.js"></script>
-
-	<!-- Inline Script -->
-	<script>
-		document.addEventListener("DOMContentLoaded", function(event) {
-			const books = document.querySelectorAll("input[id^='book']");
-
-			for (constbook of books) {
-				book.addEventListener("click", function(event) {
-					console.log("Weeeee!");
-				});
-			}
-		});
-	</script>
-</body>
+        for (const book of books) {
+          book.addEventListener("click", function(event) {
+            debugger;
+            document.getElementById("addedReadBook").innerHTML += "<div class=\"flex-container\">" + this.parentElement.parentElement.innerHTML + "</div>";
+            this.parentElement.parentElement.remove()
+          });
+        }
+      });
+    </script>
+  </body>
 
 </html>

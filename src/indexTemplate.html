@@ -11,6 +11,24 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		img {
+			height: 150px;
+			width: 150px;
+		}
+
+		.flex-container {
+			display: flex;
+			padding-left: 30px;
+			padding-right: 50px;
+			flex-wrap: wrap;
+			align-content: space-around;
+		}
+
+		.book {
+			padding: 20px 10px;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -61,11 +79,11 @@
 					<form>
 						<label>Name:<input type="text" name="name"> </label>
 						<br>
-						<label><input type="text" name="firstBook"></label><br>
-						<label><input type="text" name="secondBook"></label><br>
-						<label><input type="text" name="thirdBook"></label><br>
-						<label><input type="text" name="fourthBook"></label><br>
-						<label><input type="text" name="fifthBook"></label><br>
+						<label>1st Book: <input type="text" name="firstBook"></label><br>
+						<label>2nd Book: <input type="text" name="secondBook"></label><br>
+						<label>3rd Book: <input type="text" name="thirdBook"></label><br>
+						<label>4th Book: <input type="text" name="fourthBook"></label><br>
+						<label>5th Book: <input type="text" name="fifthBook"></label><br>
 					</form>
 				</div>
 			</section>
@@ -74,31 +92,79 @@
 				<div class="container">
 					<header class="major">
 						<h3>Person's Reading List</h3>
-						<ul>
-							<li>Book 1 Title:</li>
-							<br>Book Thumbnail<br>
-							Time to Read: #### <br>
-							Reading Ease <br>
-							<input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
-							<label for="book1Finished">Finished Reading?</label><br>
+						<div class="flex-container">
+							<div class="book"><strong>Anna Karenina</strong>
+								<br>Time: 21 hours 38 minutes
+								<br>Reading ease of 70.84
+								<br><img
+									src="https://standardebooks.org/images/covers/leo-tolstoy_anna-karenina_constance-garnett-27162b6b-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
 
-							<br>
-							<li>Book 2 Title:</li>
-							<br>Book Thumbnail<br>
-							Time to Read: #### <br>
-							Reading Ease <br>
-							<input type="checkbox" id="book2Finished" name="book2Finished" value="Book2Finished">
-							<label for="book2Finished">Finished Reading?</label><br>
+							<div class="book"><strong>The Scarlet Letter</strong>
+								<br>Time: 5 hours 8 minutes
+								<br>Reading ease of 55.98
+								<br><img
+									src="https://standardebooks.org/images/covers/nathaniel-hawthorne_the-scarlet-letter-bc23f58b-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
 
-							<br>
-							<li>Book 3 Title:</li>
-							<br>Book Thumbnail<br>
-							Time to Read: #### <br>
-							Reading Ease <br>
-							<input type="checkbox" id="book3Finished" name="book3Finished" value="Book3Finished">
-							<label for="book3Finished">Finished Reading?</label><br>
+							<div class="book"><strong>Oliver Twist</strong>
+								<br>Time: 9 hours 43 minutes
+								<br>Reading ease of 70.23
+								<br><img
+									src="https://standardebooks.org/images/covers/charles-dickens_oliver-twist-5e145845-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
 
-						</ul>
+							<div class="book"><strong>Much Ado About Nothing</strong>
+								<br>Time: 1 hour 24 minutes
+								<br>Reading ease of 81.53
+								<br><img
+									src="https://standardebooks.org/images/covers/william-shakespeare_much-ado-about-nothing-e3da748b-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
+
+							<div class="book"><strong>Beowulf</strong>
+								<br>Time: 1 hour 37 minutes
+								<br>Reading ease of 47.15
+								<br><img
+									src="https://standardebooks.org/images/covers/anonymous_beowulf_john-lesslie-hall-152b5155-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
+
+							<div class="book"><strong>The Three Musketeers</strong>
+								<br>Time: 14 hours 6 minutes
+								<br>Reading ease of 71.34
+								<br><img
+									src="https://standardebooks.org/images/covers/alexandre-dumas_the-three-musketeers_william-robson-5d0ab47b-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
+
+							<div class="book"><strong>Middlemarch</strong>
+								<br>Time: 19 hours 29 minutes
+								<br>Reading ease of 68.3
+								<br><img
+									src="https://standardebooks.org/images/covers/george-eliot_middlemarch-aff440ef-cover@2x.jpg">
+								<br><input type="checkbox" id="book1Finished" name="book1Finished"
+									value="Book1Finished">
+								<label for="book1Finished">Finished Reading?</label><br>
+							</div>
+							<!--							<input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
+							<label for="book1Finished">Finished Reading?</label><br> -->
+						</div>
 
 				</div>
 			</section>

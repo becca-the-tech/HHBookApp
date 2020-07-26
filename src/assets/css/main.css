@@ -2416,6 +2416,26 @@ input, select, textarea {
 				width: 2.5em;
 			}
 
+			ul.feature-icons li:nth-child(2n):before {
+				background: red;
+			}
+
+			ul.feature-icons li:nth-child(3n):before {
+				background: green;
+			}
+
+			ul.feature-icons li:nth-child(4n):before {
+				background: blue;
+			}
+
+			ul.feature-icons li:nth-child(5n):before {
+				background: orange;
+			}
+
+			ul.feature-icons li:nth-child(6n):before {
+				background: purple;
+			}
+
 
 /* Icons */
 

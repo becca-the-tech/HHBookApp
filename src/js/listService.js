@@ -18,7 +18,7 @@ class BookList {
     this.books = books
   }
   toString() {
-    return this.name + ', ' + this.owner + ', ' + this.finished;
+    return this.name + ', ' + this.owner + ', ' + this.finished + ', '+this.books;
   }
 }
 
@@ -33,7 +33,7 @@ let bookListConverter = {
   },
   fromFirestore: function (snapshot, options) {
     const data =snapshot.data(options);
-    return new BookList(data.name,data.owner, data.finished, data.books).toString();
+    return new BookList(data.name,data.owner, data.finished, data.books);
   }
 }
 
@@ -53,15 +53,6 @@ function getBookList(username){
   return db.collection("booklist")
     .where("owner","==",username)
     .withConverter(bookListConverter)
-    .get()
-
-
+    .get();
 }
-// // Adding new List to backend
-// const username = "test"
-// const newList = new BookList("my list",username,false, []);
-// storeBookList(newList);
-//
-//
-// // Fetching List from Backend
-// getBookList(username);
+

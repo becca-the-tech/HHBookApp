@@ -19,7 +19,7 @@ class Book {
     this.image = image
   }
   toString() {
-    return this.name + ', ' + this.time + ', ' + this.ease;
+    return this.name + ', ' + this.time + ', ' + this.ease+ ', '+ this.image;
   }
 }
 

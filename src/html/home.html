@@ -11,11 +11,11 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
-  <style>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+	<style>
 		img {
-			height: 150px;
+			/*height: 150px;*/
 			width: 150px;
 		}
 
@@ -38,7 +38,7 @@
 	<!-- Header -->
 	<section id="header">
 		<header>
-			<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
+			<span class="image avatar"><img src="../images/floatingbook.jpeg" alt="" /></span>
 			<h1 id="logo"><a href="#">User Name</a></h1>
 			<p></p>
 		</header>
@@ -48,6 +48,7 @@
 				<li><a href="#six">Your Reading List</a></li>
 				<li><a href="#two">Achievements</a></li>
 				<li><a href="#three">Recommended Books</a></li>
+				<li><a href="#seven">Already Read</a></li>
 			</ul>
 		</nav>
 		<footer>
@@ -70,16 +71,15 @@
 			<!-- One -->
 			<section id="one">
 				<div class="image main" data-position="center">
-					<img src="../images/banner.jpg" alt="" />
+					<img src="../images/bookbanner.jpg" alt="" />
 				</div>
 				<div class="container">
 					<header class="major">
 						<h2>Person's Reading List</h2>
 						<p>What will you read today?</p>
 					</header>
-					<h3>Create your reading list:</h3>
+					<h3>Add to your reading list:</h3>
 					<form>
-						<label>Name:<input type="text" name="name"> </label>
 						<br>
 						<label>1st Book: <input type="text" name="firstBook"></label><br>
 						<label>2nd Book: <input type="text" name="secondBook"></label><br>
@@ -106,7 +106,7 @@
 							</div>
 
 						</div>
-          </header>
+					</header>
 				</div>
 			</section>
 
@@ -175,6 +175,25 @@
 
 		</div>
 
+		<section id="seven">
+			<div class="container">
+				<header class="major">
+					<h3>Already Read</h3>
+					<div class="flex-container">
+						<div class="book"><strong>Anna Karenina</strong>
+							<br>Time: 21 hours 38 minutes
+							<br>Reading ease of 70.84
+							<br><img
+								src="https://standardebooks.org/images/covers/leo-tolstoy_anna-karenina_constance-garnett-27162b6b-cover@2x.jpg">
+							<br><input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
+							<label for="book1Finished">Read it again?</label><br>
+						</div>
+
+					</div>
+				</header>
+			</div>
+		</section>
+
 		<!-- Footer -->
 		<section id="footer">
 			<div class="container">
@@ -195,16 +214,16 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
-  <script src="../js/getBooks.js"></script>
-  <script src="../js/listService.js"></script>
-  <script src="../js/home.js"></script>
+	<script src="../js/getBooks.js"></script>
+	<script src="../js/listService.js"></script>
+	<script src="../js/home.js"></script>
 
 	<!-- Inline Script -->
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) {
 			const books = document.querySelectorAll("input[id^='book']");
 
-			for (constbook of books) {
+			for (const book of books) {
 				book.addEventListener("click", function(event) {
 					console.log("Weeeee!");
 				});

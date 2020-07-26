@@ -1,28 +1,29 @@
 document.addEventListener( "DOMContentLoaded", getBooks, false );
-document.addEventListener("DOMContectLoaded",get_listDetails,false);
+// document.addEventListener("DOMContectLoaded",get_listDetails,false);
 
 let books = [];
-let booklist = [];
+let bookList = [];
 
-function get_listDetails() {
-  const promise = getBookList("test");
-  promise.then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-      bookList.push(doc);
-    });
-  })
-    .catch(function(error) {
-      console.log("Error getting documents: ", error);
-    });
-}
-
-function getBooks(){
+async function getBooks(){
   let result = getAllBooks();
   result.then(documents => {
     documents.forEach((doc)=>books.push(doc));
   });
+  let data = await getBookList("test");
+  bookList.push(data);
+  getBooksForList();
 }
 
+function getBooksForList(){
+  console.log(bookList);
+  bookList.map(book =>{
+    let mybooks = book.docs[0]._document.proto.fields.books.arrayValue;
+    console.log(mybooks);
+    for (let i = 0 ; i <mybooks.values.length; i++){
+      console.log(mybooks.values[i].stringValue);
+    }
+  })
+}
 document.getElementById("addbutton").addEventListener('click', e=>{
   e.preventDefault();
   let selectElement  = document.createElement("select");

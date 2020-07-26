@@ -11,7 +11,9 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
-	<style>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+  <style>
 		img {
 			height: 150px;
 			width: 150px;
@@ -103,124 +105,8 @@
 								<label for="book1Finished">Finished Reading?</label><br>
 							</div>
 
-							<div class="book"><strong>The Scarlet Letter</strong>
-								<br>Time: 5 hours 8 minutes
-								<br>Reading ease of 55.98
-								<br><img
-									src="https://standardebooks.org/images/covers/nathaniel-hawthorne_the-scarlet-letter-bc23f58b-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Oliver Twist</strong>
-								<br>Time: 9 hours 43 minutes
-								<br>Reading ease of 70.23
-								<br><img
-									src="https://standardebooks.org/images/covers/charles-dickens_oliver-twist-5e145845-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Much Ado About Nothing</strong>
-								<br>Time: 1 hour 24 minutes
-								<br>Reading ease of 81.53
-								<br><img
-									src="https://standardebooks.org/images/covers/william-shakespeare_much-ado-about-nothing-e3da748b-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Beowulf</strong>
-								<br>Time: 1 hour 37 minutes
-								<br>Reading ease of 47.15
-								<br><img
-									src="https://standardebooks.org/images/covers/anonymous_beowulf_john-lesslie-hall-152b5155-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Les Miserables</strong>
-								<br>Time: 34 hours 6 minutes
-								<br>Reading ease of 71.24
-								<br><img
-									src="https://standardebooks.org/images/covers/victor-hugo_les-miserables_isabel-f-hapgood-ec8bfb8b-cover@2x.jpg"
-									alt="Les Miserables">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>A Christmas Carol</strong>
-								<br>Time: 1 hours 46 minutes
-								<br>Reading ease of 79.9
-								<br><img
-									src="https://standardebooks.org/images/covers/charles-dickens_a-christmas-carol-8d64bc69-cover@2x.jpg"
-									alt="A Christmas Carol">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>The Secret Garden</strong>
-								<br>Time: 5 hours 1 minutes
-								<br>Reading ease of 82.34
-								<br><img
-									src="https://standardebooks.org/images/covers/frances-hodgson-burnett_the-secret-garden-3084900a-cover@2x.jpg"
-									alt="The Secret Garden">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Jude the Obscure</strong>
-								<br>Time: 9 hours 4 minutes
-								<br>Reading ease of 71.55
-								<br><img
-									src="https://standardebooks.org/images/covers/thomas-hardy_jude-the-obscure-cd336926-cover@2x.jpg"
-									alt="Jude the Obscure">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Phantom of the Opera</strong>
-								<br>Time: 5 hours 3 minutes
-								<br>Reading ease of 73.27
-								<br><img
-									src="https://standardebooks.org/images/covers/gaston-leroux_the-phantom-of-the-opera_alexander-teixeira-de-mattos-e7972cb0-cover@2x.jpg"
-									alt="Phantom of the Opera">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>The Three Musketeers</strong>
-								<br>Time: 14 hours 6 minutes
-								<br>Reading ease of 71.34
-								<br><img
-									src="https://standardebooks.org/images/covers/alexandre-dumas_the-three-musketeers_william-robson-5d0ab47b-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-
-							<div class="book"><strong>Middlemarch</strong>
-								<br>Time: 19 hours 29 minutes
-								<br>Reading ease of 68.3
-								<br><img
-									src="https://standardebooks.org/images/covers/george-eliot_middlemarch-aff440ef-cover@2x.jpg">
-								<br><input type="checkbox" id="book1Finished" name="book1Finished"
-									value="Book1Finished">
-								<label for="book1Finished">Finished Reading?</label><br>
-							</div>
-							<!--							<input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
-							<label for="book1Finished">Finished Reading?</label><br> -->
 						</div>
-
+          </header>
 				</div>
 			</section>
 
@@ -309,6 +195,9 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
+  <script src="../js/getBooks.js"></script>
+  <script src="../js/listService.js"></script>
+  <script src="../js/home.js"></script>
 
 	<!-- Inline Script -->
 	<script>

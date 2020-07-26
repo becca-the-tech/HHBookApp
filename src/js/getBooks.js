@@ -33,10 +33,10 @@ bookConverter = {
 function getAllBooks() {
   return db.collection("books").withConverter(bookConverter).get();
 }
-
-let result = getAllBooks();
-result.then(documents => {
-  documents.forEach((doc)=>{console.log(`${doc.id} => ${doc.data()}`);});
-})
+//
+// let result = getAllBooks();
+// result.then(documents => {
+//   documents.forEach((doc)=>{console.log(`${doc.id} => ${doc.data()}`);});
+// })
 
 

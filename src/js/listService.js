@@ -22,7 +22,7 @@ class BookList {
   }
 }
 
-bookListConverter = {
+let bookListConverter = {
   toFirestore: function(bookList) {
     return {
       name: bookList.name,
@@ -50,25 +50,18 @@ function storeBookList(bookList) {
 
 
 function getBookList(username){
-  db.collection("booklist")
+  return db.collection("booklist")
     .where("owner","==",username)
     .withConverter(bookListConverter)
     .get()
-    .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        console.log(doc.id, " => ", doc.data());
-      });
-    })
-    .catch(function(error) {
-      console.log("Error getting documents: ", error);
-    });
+
 
 }
-// Adding new List to backend
-const username = "test"
-const newList = new BookList("my list",username,false, []);
-storeBookList(newList);
-
-
-// Fetching List from Backend
-getBookList(username);
+// // Adding new List to backend
+// const username = "test"
+// const newList = new BookList("my list",username,false, []);
+// storeBookList(newList);
+//
+//
+// // Fetching List from Backend
+// getBookList(username);

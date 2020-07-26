@@ -15,15 +15,24 @@ async function getBooks(){
 }
 
 function getBooksForList(){
+  let filterBooks= [];
   console.log(bookList);
   bookList.map(book =>{
     let mybooks = book.docs[0]._document.proto.fields.books.arrayValue;
     console.log(mybooks);
     for (let i = 0 ; i <mybooks.values.length; i++){
       console.log(mybooks.values[i].stringValue);
+      for (let j = 0 ; j <books.length; j++){
+        if (books[j].data().toString().includes(mybooks.values[i].stringValue)){
+          filterBooks.push(books[j].data());
+        }
+      }
     }
   })
+  console.log(filterBooks);
 }
+
+
 document.getElementById("addbutton").addEventListener('click', e=>{
   e.preventDefault();
   let selectElement  = document.createElement("select");

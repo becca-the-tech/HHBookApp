@@ -24,10 +24,10 @@
 		</header>
 		<nav id="nav">
 			<ul>
-				<li><a href="#one" class="active">About</a></li>
-				<li><a href="#two">Things I Can Do</a></li>
-				<li><a href="#three">A Few Accomplishments</a></li>
-				<li><a href="#four">Contact</a></li>
+				<li><a href="#one" class="active">Add to Your Reading List</a></li>
+				<li><a href="#six">Your Reading List</a></li>
+				<li><a href="#two">Achievements</a></li>
+				<li><a href="#three">Recommended Books</a></li>
 			</ul>
 		</nav>
 		<footer>
@@ -80,7 +80,7 @@
 							Time to Read: #### <br>
 							Reading Ease <br>
 							<input type="checkbox" id="book1Finished" name="book1Finished" value="Book1Finished">
-							<label for "book1Finished">Finished Reading?</label><br>
+							<label for="book1Finished">Finished Reading?</label><br>
 
 							<br>
 							<li>Book 2 Title:</li>
@@ -88,7 +88,7 @@
 							Time to Read: #### <br>
 							Reading Ease <br>
 							<input type="checkbox" id="book2Finished" name="book2Finished" value="Book2Finished">
-							<label for "book2Finished">Finished Reading?</label><br>
+							<label for="book2Finished">Finished Reading?</label><br>
 
 							<br>
 							<li>Book 3 Title:</li>
@@ -96,7 +96,7 @@
 							Time to Read: #### <br>
 							Reading Ease <br>
 							<input type="checkbox" id="book3Finished" name="book3Finished" value="Book3Finished">
-							<label for "book3Finished">Finished Reading?</label><br>
+							<label for="book3Finished">Finished Reading?</label><br>
 
 						</ul>
 
@@ -106,16 +106,15 @@
 			<!-- Two -->
 			<section id="two">
 				<div class="container">
-					<h3>Things I Can Do</h3>
-					<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non.
-						Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
+					<h3>Achievements</h3>
+					<p></p>
 					<ul class="feature-icons">
-						<li class="icon solid fa-code">Write all the code</li>
-						<li class="icon solid fa-cubes">Stack small boxes</li>
+						<li class="icon solid fa-code">Read all the books</li>
+						<li class="icon solid fa-cubes">Small stack of books</li>
 						<li class="icon solid fa-book">Read books and stuff</li>
-						<li class="icon solid fa-coffee">Drink much coffee</li>
-						<li class="icon solid fa-bolt">Lightning bolt</li>
-						<li class="icon solid fa-users">Shadow clone technique</li>
+						<li class="icon solid fa-coffee">Drink much coffee and read a book</li>
+						<li class="icon solid fa-bolt">Lightning fast reader</li>
+						<li class="icon solid fa-users">Reading in the shadows</li>
 					</ul>
 				</div>
 			</section>
@@ -123,9 +122,8 @@
 			<!-- Three -->
 			<section id="three">
 				<div class="container">
-					<h3>A Few Accomplishments</h3>
-					<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non.
-						Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+					<h3>Recommended Books</h3>
+					<p></p>
 					<div class="features">
 						<article>
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
@@ -155,7 +153,7 @@
 				</div>
 			</section>
 
-			<!-- Four -->
+			<!-- Four
 			<section id="four">
 				<div class="container">
 					<h3>Contact Me</h3>
@@ -181,6 +179,7 @@
 					</form>
 				</div>
 			</section>
+		-->
 
 			<!-- Five -->
 			<!--
@@ -536,6 +535,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
+	<!-- Inline Script -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) {
+			const books = document.querySelectorAll("input[id^='book']");
+
+			for (constbook of books) {
+				book.addEventListener("click", function(event) {
+					console.log("Weeeee!");
+				});
+			}
+		});
+	</script>
 </body>
 
 </html>

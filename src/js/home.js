@@ -30,6 +30,41 @@ function getBooksForList(){
     }
   })
   console.log(filterBooks);
+  let containerArticle = document.getElementById("container-article");
+  for (let i = 0 ; i <filterBooks.length;i++){
+    let details = filterBooks[i].split(",")
+    let article = document.createElement("article");
+      let anchor = document.createElement("a");
+      anchor.setAttribute("href","#");
+      anchor.setAttribute("class","image");
+        let image = document.createElement("img");
+        image.setAttribute("src",details[3]);
+        anchor.appendChild(image);
+      let div = document.createElement("div");
+      div.setAttribute("class","inner");
+        let h4 = document.createElement("h4");
+        h4.innerText= details[0];
+        let time = document.createElement("p");
+        time.innerText = "Time : "+ details[1];
+        let ease = document.createElement("p");
+        ease.innerText = "Reading ease of "+ details[2];
+        let checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", details[0]);
+        checkbox.setAttribute("name",details[0]);
+          let label = document.createElement("label");
+          label.setAttribute("for",details[0]);
+          label.innerText = "Finished Reading?"
+        checkbox.appendChild(label);
+      div.appendChild(h4);
+      div.appendChild(time);
+      div.appendChild(ease);
+      div.appendChild(checkbox);
+    article.appendChild(anchor);
+    article.appendChild(div);
+    containerArticle.appendChild(article);
+  }
+
 }
 
 
